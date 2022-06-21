@@ -1,0 +1,197 @@
+/*-------HEADING STYLES--------*/
+
+.open-to-dropdown-heading {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+#flush-headingFirst {
+    font-size: 1.4rem;
+    font-weight: 300;
+    display: inline-block;
+    margin-left: 3%;
+}
+.accordion-header {
+    font-size: 1.1rem;
+    color: black;
+    font-weight: 450;
+}
+
+
+
+/*-------ICON STYLES-----------*/
+
+.bi-search {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.bi-camera-fill {
+    position: absolute;
+    top: 8%;
+    left: 90%;
+    color: blue;
+    font-size: 1.8rem;
+}
+
+.bi-pencil {
+    position: absolute;
+    color: #47494a;
+    top: -140%;
+    right: 15%;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#blurry {
+    margin-left: 6rem;
+}
+
+
+/*----------NAVBAR STYLES------------*/
+
+.nav-form {
+    position: relative;
+}
+
+.search-text {
+    padding-left: 25px;
+}
+
+.mini-profile-pic {
+    border-radius: 50%;
+    height:10%;
+    width: 10%;
+}
+
+.dropdown-profile-pic {
+    border-radius: 50%;
+    height:80%;
+    width: 75%;
+}
+
+/*----------------CONTENT SIZING----------*/
+
+.main,.side {
+    height: 100px;
+}
+
+body {
+    margin-top: 130px;
+}
+
+.profile-background, .right-profile-content, .left-profile-content, .accordion-main-heading {
+    position: relative;
+}
+
+.main-profile-picture {
+    border: white 0.2rem solid;
+    border-radius: 50%;
+    position: absolute;
+    height: 75%;
+    top: -70%;
+    left: 8%;
+}
+
+.dropdown.open-to {             /*why aren't my buttons lining up? */
+    display:inline-block
+}
+
+/*-----------FONT STYLES-------------*/
+
+.font-blue {
+    color:blue;
+}
+
+.font-grey {
+    color: grey;
+}
+
+.current-job-title {
+    font-size: 1.1rem;
+    font-weight: 350;
+    display: inline-block;
+}
+
+span {
+    display: block;
+    font-size: .9rem;
+    font-weight: 350px;
+}
+
+.open-to-dropdown-par {
+    font-size: .95rem;
+}
+
+.accordion-body p {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 300;
+}
+
+
+/*----------------BUTTON STYLES-------------*/
+
+.profile-buttons button {
+    display: inline-block;          /*why isn't my add profile section button going inline? */
+}
+
+.btn {
+    border-radius:1.6rem;   
+}
+
+.blue-fill-btn::after {         /*gets rid of dropdown arrow */
+    content: none;
+}
+
+#moreDropdownMenuButton::after {
+    content: none;
+}
+
+.accordion-close {
+    position: absolute;
+    right:3%;
+}
+
+.accordion-button, .accordion-button:not(.collapsed) {
+    font-size: 1.1rem;
+    color: black;
+    font-weight: 400; 
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media (min-width: 768px) {      didn't get rid of the side element
+    .side {
+        visibility: hidden;
+        display: none;
+    }
+} */
