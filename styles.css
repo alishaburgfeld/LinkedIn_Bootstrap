@@ -60,6 +60,18 @@ h2 {
 
 /*----------NAVBAR STYLES------------*/
 
+/* I added and extra class to all your icon + text divs. That way, you can align the items and make them vertical within a flex box. */
+.ic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-link{
+    padding-right:50px;
+}
+
+
 .nav-form {
     position: relative;
 }
@@ -82,6 +94,10 @@ h2 {
 
 /*----------------CONTENT SIZING----------*/
 
+.open-to-dropdown-menu {       /* still not resizing my dropdown menu */
+    width: auto;
+}
+
 .main,.side {
     height: 100px;
 }
@@ -101,10 +117,6 @@ body {
     height: 75%;
     top: -70%;
     left: 8%;
-}
-
-.dropdown.open-to {             /*why aren't my buttons lining up? */
-    display:inline-block
 }
 
 /*-----------FONT STYLES-------------*/
@@ -142,9 +154,16 @@ span {
 
 /*----------------BUTTON STYLES-------------*/
 
-.profile-buttons button {
-    display: inline-block;          /*why isn't my add profile section button going inline? */
+/* .profile-buttons button {
+     display: inline-block;          why isn't my add profile section button going inline?  this is what I had
+} */
+
+/* Avery ---->You want to specify the child and override the width: 100% in the
+default version of this. The reason it wasn't working was because you have the buttons in the divs first so you weren't referencing anything.*/
+.profile-buttons > *{
+    width: auto;
 }
+
 
 .btn {
     border-radius:1.6rem;   

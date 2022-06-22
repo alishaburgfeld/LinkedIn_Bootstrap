@@ -30,6 +30,7 @@
 			>
 				<span class="navbar-toggler-icon"></span>
 			</button>
+
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<form class="d-flex nav-form" role="search">
 					<i class="bi bi-search"></i>
@@ -41,23 +42,23 @@
 					/>
 				</form>
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item text-align-center">
+					<li class="nav-item ic">
 						<i class="bi bi-house-door-fill fs-2"></i>
 						<a class="nav-link active" aria-current="page" href="#">Home</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item ic">
 						<i class="bi bi-people-fill fs-2"></i>
 						<a class="nav-link" href="#">Network</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item ic">
 						<i class="bi bi-briefcase-fill fs-2"></i>
 						<a class="nav-link" href="#">Jobs</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item ic">
 						<i class="bi bi-chat-dots-fill fs-2"></i>
 						<a class="nav-link" href="#">Messaging</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item ic">
 						<i class="bi bi-bell-fill fs-2"></i>
 						<a class="nav-link" href="#">Notifications</a>
 					</li>
@@ -103,35 +104,28 @@
 							<li><a class="dropdown-item" href="#">Sign Out</a></li>
 						</ul>
 					</li>
-					<li class="nav-item">
-						<i class="bi bi-arrow-down-right-square-fill fs-2"></i>
-						<a
-							class="nav-link"
-							data-mdb-toggle="offcanvas"
-							href="#offcanvasRight"
-							role="button"
-							aria-controls="offcanvasRight"
-						>
-							Work
+					<li class="nav-item ic">
+						<a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Work
+							<i class="bi bi-arrow-down-right-square-fill fs-2"></i>
 						</a>
-						<!--for some reason my off-canvas is not actually going off-canvas-->
-						<!--also why is my work tag so far to the right but the rest isnt?-->
-						<!-- <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-						<div class="offcanvas-header">
-						  <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas</h5>
-						  <button type="button" class="btn-close text-reset" data-mdb-dismiss="offcanvas" aria-label="Close"></button>
-						</div>
-						<div class="offcanvas-body">
-						  <div>
-							Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images,
-							lists, etc.
-						  </div> -->
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+
 	<body>
+		<!--OFFCANVAS - FOR SOME REASON THIS WOULD NOT WORK IF IT WAS IN THE NAV BAR, LINK ON LINE 108-->
+		<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+			<div class="offcanvas-header">
+				<h5 id="offcanvasRightLabel">Offcanvas right</h5>
+				<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images,
+			lists, etc.
+			</div>
+		</div>
 		<div class="container">
 			<div class="row gx-5 justify-content-around">
 				<div class="col-7 border main rounded p-0">
@@ -158,7 +152,7 @@
 							<i class="bi bi-pencil"></i>
 						</div>
 						<div class="row profile-buttons">
-							<div class="dropdown open-to"> 	<!--why does my dropdown open to the top?-->
+							<div class="dropdown open-to"> 
 								<button
 									class="btn btn-primary dropdown-toggle blue-fill-btn py-1 px-3"
 									type="button"
@@ -168,7 +162,8 @@
 								>
 									Open to
 								</button> <!--I can't figure out how to decrease the size of my dropdown menu-->
-								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+								<!-- You want to keep this button inside your list so that you can manipulate them together -->
+								<ul class="dropdown-menu open-to-dropdown-menu" aria-labelledby="dropdownMenuButton1">
 									<li>
 										<a class="dropdown-item" href="#">
 											<h4 class="open-to-dropdown-heading">Finding a job</h3>
@@ -196,44 +191,133 @@
 								</ul>
 							</div>
 							<div class="add-to-profile"> 
-								<button type="button" class="btn btn-outline-primary accordion-toggle" href="#addProfileAccordion" data-bs-toggle="accordion"
-								aria-expanded="false">Add profile section
-									</button>
-								<!--ACCORDION SECTION--> <!--CAN'T FIGURE OUT HOW TO OPEN FROM A-->
-								<!-- <div class="accordion accordion-flush" id="addProfileAccordion">
-									<div class="accordion-item">
-									  <h2 class="accordion-header" id="flush-headingOne">
-										<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-										  Accordion Item #1
-										</button>
-									  </h2>
-									  <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-										<div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-									  </div>
+
+								<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addProfileModal">
+									Add profile section
+								</button>
+								<div class="modal fade" id="addProfileModal" tabindex="-1" aria-labelledby="addProfileModalLabel" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered">
+										<div class="modal-content">
+											<div class="accordion accordion-flush p-3" id="addProfileAccordion">
+												<div class="accordion-main-heading">
+													<h2 class="accordion-header" id="flush-headingFirst">Add to Profile</h2>
+													<!--this button isn't closing my accordion/modal. I tried changing the data-bs-dismiss to #addProfileModal but that didn't work-->
+													<button			
+														type="button"
+														class="btn-close accordion-close"
+														data-bs-dismiss="#addProfileAccordion"	
+														aria-label="Close"
+													></button>
+													<hr class="divider" />
+												</div>
+												<div class="accordion-item">
+													<h2 class="accordion-header" id="flush-headingOne">
+														<button
+															class="accordion-button"
+															type="button"
+															data-bs-toggle="collapse"
+															data-bs-target="#flush-collapseOne"
+															aria-expanded="false"
+															aria-controls="flush-collapseOne"
+														>
+															Core
+														</button>
+													</h2>
+													<div
+														id="flush-collapseOne"
+														class="accordion-collapse collapse show"
+														aria-labelledby="flush-headingOne"
+														data-bs-parent="#addProfileAccordion"
+													>
+														<div class="accordion-body py-2 px-0 m0">
+															<p>
+																Start with the basics. Filling out these sections will help you be discovered by recruiters
+																and people you may know
+															</p>
+															<ul class="list-group list-group-flush">
+																<li class="list-group-item m-1">Add about</li>
+																<li class="list-group-item m-1">Add education</li>
+																<li class="list-group-item m-1">Add position</li>
+																<li class="list-group-item m-1">Add career break</li>
+																<li class="list-group-item m-1">Add skills</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="accordion-item">
+													<h2 class="accordion-header" id="flush-headingTwo">
+														<button
+															class="accordion-button collapsed"
+															type="button"
+															data-bs-toggle="collapse"
+															data-bs-target="#flush-collapseTwo"
+															aria-expanded="false"
+															aria-controls="flush-collapseTwo"
+														>
+															Recommended
+														</button>
+													</h2>
+													<div
+														id="flush-collapseTwo"
+														class="accordion-collapse collapse"
+														aria-labelledby="flush-headingTwo"
+														data-bs-parent="#addProfileAccordion"
+													>
+														<div class="accordion-body py-2 px-0 m0">
+															<p>
+																Completing these sections will increase your credibility and give you access to more
+																opportunities
+															</p>
+															<ul class="list-group list-group-flush">
+																<li class="list-group-item m-1">Add featured</li>
+																<li class="list-group-item m-1">Add licenses & certifications</li>
+																<li class="list-group-item m-1">Add courses</li>
+																<li class="list-group-item m-1">Add recommendations</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="accordion-item">
+													<h2 class="accordion-header" id="flush-headingThree">
+														<button
+															class="accordion-button collapsed"
+															type="button"
+															data-bs-toggle="collapse"
+															data-bs-target="#flush-collapseThree"
+															aria-expanded="false"
+															aria-controls="flush-collapseThree"
+														>
+															Additional
+														</button>
+													</h2>
+													<div
+														id="flush-collapseThree"
+														class="accordion-collapse collapse"
+														aria-labelledby="flush-headingThree"
+														data-bs-parent="#addProfileAccordion"
+													>
+														<div class="accordion-body py-2 px-0 m0">
+															<p class="font-grey">
+																Add even more personality to your profile. These sections will help you grow your network
+																and build more relationships.
+															</p>
+															<ul class="list-group list-group-flush">
+																<li class="list-group-item m-1 font-grey">Add volunteer experience</li>
+																<li class="list-group-item m-1 font-grey">Add publications</li>
+																<li class="list-group-item m-1 font-grey">Add patents</li>
+																<li class="list-group-item m-1 font-grey">Add projects</li>
+																<li class="list-group-item m-1 font-grey">Add honors & awards</li>
+																<li class="list-group-item m-1 font-grey">Add test scores</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
-									<div class="accordion-item">
-									  <h2 class="accordion-header" id="flush-headingTwo">
-										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-										  Accordion Item #2
-										</button>
-									  </h2>
-									  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-										<div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-									  </div>
-									</div>
-									<div class="accordion-item">
-									  <h2 class="accordion-header" id="flush-headingThree">
-										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-										  Accordion Item #3
-										</button>
-									  </h2>
-									  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-										<div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-									  </div>
-									</div>
-								</div> -->
-									
+								</div>
 							</div>
+
 							<div class="dropdown more-btn">
 								<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="moreDropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
 								  More
